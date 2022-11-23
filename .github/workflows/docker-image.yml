@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: make build-x86_64
     - name: Build the Docker image
-      run: docker build buildenv -t danios1-buildenv && docker run --rm -it -v "$(pwd)":/root/env danios1-buildenv && make build-x86_64
+      run: docker build buildenv -t danios1-buildenv && docker run --rm -it -v "$(pwd)":/root/env danios1-buildenv
